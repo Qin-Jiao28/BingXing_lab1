@@ -1,11 +1,10 @@
 #include <iostream>
 #include <vector>
-#include <windows.h> // Windows 高精度计时器所需
+#include <windows.h> 
 #include <iomanip>
 
 using namespace std;
 
-// 加上这个宏，防止编译器把计算结果优化掉
 #define VOLATILE_CHECK(x) __asm__ __volatile__("" : : "g"(x) : "memory")
 
 void naive_matrix_vector(int n, const vector<vector<double>>& A, const vector<double>& b, vector<double>& sum) {
